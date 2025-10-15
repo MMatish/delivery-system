@@ -59,10 +59,16 @@ sail artisan key:generate
 ###
 
 ## Useful commands for the development
-Just a shortcut for clearing all the settings
+
+## A shortcut for clearing all the settings
 ```bash
 sail artisan config:clear
 sail artisan route:clear
 sail artisan cache:clear
 sail artisan clear-compiled
+```
+
+## Publishing settings
+```bash
+php artisan config:publish cors
 ```
