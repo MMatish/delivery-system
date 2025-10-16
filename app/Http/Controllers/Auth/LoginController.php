@@ -3,23 +3,36 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Services\AuthService;
 use Illuminate\Http\Request;
+use App\Services\AuthService;
 
 class LoginController extends Controller
 {
-    public function __construct(
-        protected AuthService $authService
-    ) {
+    protected AuthService $authService;
+
+    public function __construct(AuthService $authService)
+    {
+        $this->authService = $authService;
     }
 
     public function login(Request $request)
     {
-        return $this->authService->login($request);
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string',
+        ]);
+
+        $user = $this->authService->login(
+            $request->only('email', 'password'),
+            $request->ip()
+        );
+
+        return response()->json($user);
     }
 
     public function logout(Request $request)
     {
-        return $this->authService->logout($request);
+        $this->authService->logout();
+        return response()->json(['message' => 'Logged out successfully.']);
     }
 }
