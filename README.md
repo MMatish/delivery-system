@@ -50,10 +50,12 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 ### 3. Setting up the environment
 Sail by default using sail and password for the local development, not recommended to change this setting.
 The env.example contains the working settings without the API keys.
+Migrate:fresh --seed is also used for generating a database with test data from scratch.
 
 Generating the key:
 ```bash
 sail artisan key:generate
+sail artisan migrate:fresh --seed
 ```
 
 ###
