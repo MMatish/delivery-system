@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\DriverRegisterController;
 use App\Http\Controllers\Admin\AdminJobController;
 use App\Http\Controllers\Driver\DriverJobController;
 use App\Http\Middleware\RoleMiddleware;
@@ -8,6 +9,7 @@ use App\Http\Middleware\RoleMiddleware;
 // Authentication routes
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
+Route::post('/register-driver', [DriverRegisterController::class, 'register']);
 
 // Protected routes
 // Admin routes
