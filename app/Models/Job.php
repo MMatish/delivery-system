@@ -23,4 +23,13 @@ class Job extends Model
     {
         return $this->belongsTo(User::class, 'driver_id');
     }
+
+    public function setDriverIdAttribute($value)
+    {
+        $this->attributes['driver_id'] = $value;
+
+        if ($value !== null && $this->attributes['status'] === 'unassigned') {
+            $this->attributes['status'] = 'assigned';
+        }
+    }
 }

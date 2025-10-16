@@ -14,8 +14,8 @@ return new class extends Migration
             $table->string('delivery_address');
             $table->string('recipient_name');
             $table->string('recipient_phone');
-            $table->enum('status', ['assigned', 'in_progress', 'completed', 'failed'])->default('assigned');
-            $table->foreignId('driver_id')->constrained('users')->onDelete('cascade');
+            $table->enum('status', ['unassigned', 'assigned', 'in_progress', 'completed', 'failed'])->default('unassigned');
+            $table->foreignId('driver_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
