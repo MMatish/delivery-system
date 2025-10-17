@@ -1,5 +1,15 @@
 # Delivery System Backend (Laravel 12)
 
+## Estimated time spent:
+
+I have spent around 5-7 hours doing
+
+### What took a lot of time:
+
+- Troubleshooting: for some weird reason the Laravel Fortify was broken out of the box. It could not find it's own rate limiter (even creating a custom rate limiter did not help). I assume it has to do something with Laravel Sail and the backend running in the docker, but solutions online could not help, so I created the login and registration from scratch. **Took 1-1.5 hours** reading through the docs.
+- Setting the initial environment: had to spend some time remembering how to set the initial environment to be compatible with the separate frontend (SPA). Set up the laravel session, csrf and cors as well the middleware to check the role of the user. **Took also around 1-1.5 hours**.
+- The rest was actually creating the controllers, services and testing as well as making sure everything works properly. 
+
 ## Project Overview
 This is a **backend delivery management system** built with **Laravel 12**. 
 
