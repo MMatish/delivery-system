@@ -38,6 +38,7 @@ Some of the backend settings:
 ### Driver
 - If we register as a new driver, we still need to log in afterwards
 - When logged in, we see our jobs and can freely change the status of the job (except we cannot set it to "unassigned")
+- When setting status to Failed, the mail is logged in the laravel notifying the admin about the delivery failure
 
 ---
 
