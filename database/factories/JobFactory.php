@@ -15,7 +15,7 @@ class JobFactory extends Factory
             'delivery_address' => $this->faker->address(),
             'recipient_name' => $this->faker->name(),
             'recipient_phone' => $this->faker->phoneNumber(),
-            'status' => 'assigned',
+            'status' => $this->faker->randomElement(['assigned','in_progress','completed','failed']),
             'driver_id' => \App\Models\User::factory(),
         ];
     }

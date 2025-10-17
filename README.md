@@ -24,6 +24,21 @@ Some of the backend settings:
 - **Sessions**: file-based (`SESSION_DRIVER=file`)  
 - **Queue**: synchronous (`QUEUE_CONNECTION=database`)  
 
+
+---
+
+## The program workflow
+- We log in or create a new account as the driver
+
+### Admin
+- If we log in as an admin, then we can update, create, remove and assign jobs
+- Creating a job automatically adds an "unassigned" status and null id for the driver
+- Giving the job to the driver changes the status to "assigned". Changing the driver sets the status back to "assigned"
+
+### Driver
+- If we register as a new driver, we still need to log in afterwards
+- When logged in, we see our jobs and can freely change the status of the job (except we cannot set it to "unassigned")
+
 ---
 
 ## Getting Started
@@ -34,7 +49,7 @@ git clone <repository-url>
 cd <project-folder> 
 ```
 
-### 2. Installing dependencies and starting the backend in the docker via sail
+### 2. Installing dependencies and starting the backend in the docker via sail ('-d' is for detached mode)
 ```bash
 composer install
 ./vendor/bin/sail up -d
@@ -58,9 +73,8 @@ sail artisan key:generate
 sail artisan migrate:fresh --seed
 ```
 
-###
 
-## Useful commands for the development
+### Useful commands for the development
 
 ## A shortcut for clearing all the settings
 ```bash
