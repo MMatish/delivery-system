@@ -10,6 +10,15 @@ I have spent around 5-7 hours doing
 - Setting the initial environment: had to spend some time remembering how to set the initial environment to be compatible with the separate frontend (SPA). Set up the laravel session, csrf and cors as well the middleware to check the role of the user. **Took also around 1-1.5 hours**.
 - The rest was actually creating the controllers, services and testing as well as making sure everything works properly. 
 
+
+## Link to the video with the demonstration
+
+- https://drive.proton.me/urls/PSSXX3DQYM#3GgyEL5NCnkm
+
+## Link to the frontend
+
+- https://github.com/MMatish/delivery-system-frontend
+
 ## Project Overview
 This is a **backend delivery management system** built with **Laravel 12**. 
 
