@@ -19,7 +19,7 @@ class AdminJobController extends Controller
     public function listJobs(Request $request)
     {
         $request->validate([
-            'status' => 'nullable|in:assigned,in_progress,completed,failed',
+            'status' => 'nullable|in:unassigned,assigned,in_progress,completed,failed',
         ]);
 
         $jobs = $this->jobService->getAllJobs($request->status);
