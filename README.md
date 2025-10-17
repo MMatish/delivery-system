@@ -11,13 +11,17 @@ I have spent around 5-7 hours doing
 - The rest was actually creating the controllers, services and testing as well as making sure everything works properly. 
 
 
-## Link to the video with the demonstration
+## Links
+
+### Link to the video with the demonstration
 
 - https://drive.proton.me/urls/PSSXX3DQYM#3GgyEL5NCnkm
 
-## Link to the frontend
+### Link to the frontend
 
 - https://github.com/MMatish/delivery-system-frontend
+
+---
 
 ## Project Overview
 This is a **backend delivery management system** built with **Laravel 12**. 
@@ -93,6 +97,12 @@ sail artisan key:generate
 sail artisan migrate:fresh --seed
 ```
 
+### 4. Running tests
+```bash
+sail artisan test
+```
+
+---
 
 ### Useful commands for the development
 
